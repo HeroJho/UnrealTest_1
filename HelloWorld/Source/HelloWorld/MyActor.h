@@ -27,5 +27,10 @@ private:
 
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* Mesh;
+
+	UPROPERTY(EditAnywhere, Category = BattleState)
+	float RotateSpeed = 30.f;
+
+
 };
  

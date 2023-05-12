@@ -33,5 +33,7 @@ void AMyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	AddActorLocalRotation(FRotator(0.f, RotateSpeed * DeltaTime, 0.f));
+
 }
 
