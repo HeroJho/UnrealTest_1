@@ -2,9 +2,17 @@
 
 
 #include "MyGameModeBase.h"
-#include "MyPawn.h"
+#include "MyCharacter.h"
 
 AMyGameModeBase::AMyGameModeBase()
 {
-	DefaultPawnClass = AMyPawn::StaticClass();
+	// DefaultPawnClass = AMyCharacter::StaticClass();
+
+	static ConstructorHelpers::FClassFinder<ACharacter> BP_Char(TEXT("Blueprint'/Game/Blueprint/BP_MyCharactor.BP_MyCharactor_C'"));
+
+	if (BP_Char.Succeeded())
+	{
+		DefaultPawnClass = BP_Char.Class;
+	}
+
 }
